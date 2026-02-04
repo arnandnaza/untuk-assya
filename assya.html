@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesan Cinta untuk Pacar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #ff9a9e, #fecfef);
+            color: #333;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #e91e63;
+        }
+        .heart {
+            font-size: 3em;
+            color: red;
+            animation: beat 1s infinite;
+        }
+        @keyframes beat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        button {
+            background: #e91e63;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 10px;
+            margin: 20px;
+        }
+        button:hover {
+            background: #c2185b;
+        }
+        #secret-message {
+            display: none;
+            font-size: 1.5em;
+            margin-top: 20px;
+            color: #333;
+        }
+        #music {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hai Sayang, Aku Cinta Kamu! 💖</h1>
+    <div class="heart">❤️</div>
+    <p>Klik tombol di bawah untuk kejutan spesial!</p>
+    <button onclick="showMessage()">Ungkap Pesan Rahasia</button>
+    <button onclick="playMusic()">Putar Musik Cinta</button>
+    <div id="secret-message">
+        <p>Kamu adalah cahaya dalam hidupku. Setiap hari bersamamu adalah petualangan yang indah. Aku sayang kamu selamanya! 🌹</p>
+    </div>
+    <audio id="music" controls>
+        <source src="lagu.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung audio.
+    </audio>
+    
+    <script>
+        function showMessage() {
+            const message = document.getElementById('secret-message');
+            message.style.display = message.style.display === 'none' ? 'block' : 'none';
+        }
+        
+        function playMusic() {
+            const audio = document.getElementById('music');
+            audio.style.display = 'block';
+            audio.play();
+        }
+    </script>
+</body>
+</html>

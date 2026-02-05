@@ -5,12 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Untuk Kamu</title>
 
-    <!-- GOOGLE FONTS -->
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&family=Baloo+2:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins&family=Baloo+2:wght@500;700&display=swap" rel="stylesheet">
 
     <style>
-        * { box-sizing: border-box; }
-
         body {
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(to bottom, #ff9a9e, #fecfef);
@@ -20,7 +17,7 @@
             overflow-x: hidden;
         }
 
-        /* LOVE BACKGROUND */
+        /* BACKGROUND LOVE */
         .hearts {
             position: fixed;
             inset: 0;
@@ -40,110 +37,123 @@
             z-index: 2;
         }
 
-        /* ===== BAGIAN ATAS (STACK KE BAWAH) ===== */
-        .top-stack {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 35px;
-        }
-
-        h1 {
+        .title {
             font-family: 'Pacifico', cursive;
-            font-size: 2.3em;
+            font-size: 2.2em;
             color: #b4004e;
-            background: rgba(255,255,255,0.65);
+            background: rgba(255,255,255,0.7);
             padding: 18px 26px;
             border-radius: 25px;
-            box-shadow: 0 10px 20px rgba(233,30,99,0.25);
+            margin: 0 auto 20px;
+            width: fit-content;
         }
 
-        .photo-text {
+        /* === ANIMASI HAHA === */
+        .haha {
             font-family: 'Baloo 2', cursive;
+            font-size: 1.4em;
             background: #ffd6e8;
             color: #c2185b;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 1.1em;
-            box-shadow: 0 6px 12px rgba(233,30,99,0.25);
+            padding: 12px 26px;
+            border-radius: 25px;
+            width: fit-content;
+            margin: 0 auto 22px;
+            box-shadow: 0 8px 15px rgba(233,30,99,0.3);
+
+            animation: hahaBounce 1.2s infinite ease-in-out;
+        }
+
+        @keyframes hahaBounce {
+            0%   { transform: translateY(0) rotate(0deg); }
+            20%  { transform: translateY(-6px) rotate(-2deg); }
+            40%  { transform: translateY(0) rotate(2deg); }
+            60%  { transform: translateY(-4px) rotate(-1deg); }
+            80%  { transform: translateY(0) rotate(1deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+
+        .haha:hover {
+            animation: hahaCrazy 0.4s infinite;
+            cursor: pointer;
+        }
+
+        @keyframes hahaCrazy {
+            0% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(3deg) scale(1.05); }
+            50% { transform: rotate(-3deg) scale(1.08); }
+            75% { transform: rotate(2deg) scale(1.05); }
+            100% { transform: rotate(0deg) scale(1); }
         }
 
         .group-title {
             font-family: 'Baloo 2', cursive;
             background: linear-gradient(135deg, #ffb6d5, #ffd6e8);
             color: #b4004e;
-            padding: 10px 24px;
-            border-radius: 22px;
-            font-size: 1.2em;
-            box-shadow: 0 8px 15px rgba(233,30,99,0.25);
+            padding: 12px 26px;
+            border-radius: 25px;
+            font-size: 1.25em;
+            width: fit-content;
+            margin: 0 auto 20px;
         }
 
-        /* FOTO (TIDAK DIUBAH) */
         .photo-wrapper {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
             gap: 18px;
             max-width: 700px;
-            margin: 0 auto 30px;
+            margin: 0 auto 40px;
         }
 
         .photo-box {
             aspect-ratio: 1 / 1;
             border-radius: 18px;
             border: 3px dashed #e91e63;
-            background-color: rgba(255,255,255,0.55);
+            background: rgba(255,255,255,0.6);
             overflow: hidden;
-            transition: all 0.35s ease;
+            transition: 0.35s;
         }
 
         .photo-box img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 15px;
-            transition: transform 0.35s ease;
+            transition: 0.35s;
         }
 
         .photo-box:hover {
             transform: translateY(-8px);
             box-shadow: 0 15px 30px rgba(233,30,99,0.35);
-            border-style: solid;
         }
 
         .photo-box:hover img {
-            transform: scale(1.08);
+            transform: scale(1.1);
         }
     </style>
 </head>
 <body>
 
-    <!-- LOVE -->
     <div class="hearts" id="hearts">
-        <span class="heart" style="left:5%; top:10%">💗</span>
-        <span class="heart" style="left:15%; top:40%">💖</span>
-        <span class="heart" style="left:30%; top:70%">💕</span>
-        <span class="heart" style="left:50%; top:20%">💘</span>
-        <span class="heart" style="left:65%; top:60%">💞</span>
-        <span class="heart" style="left:80%; top:30%">💓</span>
-        <span class="heart" style="left:90%; top:75%">💗</span>
+        <span class="heart" style="left:10%; top:20%">💗</span>
+        <span class="heart" style="left:30%; top:60%">💖</span>
+        <span class="heart" style="left:55%; top:40%">💕</span>
+        <span class="heart" style="left:75%; top:70%">💘</span>
     </div>
 
     <div class="content">
 
-        <!-- BAGIAN ATAS SESUAI CONTOH -->
-        <div class="top-stack">
-            <h1>
-                hai manusia terimut, tercantik, terlucu,<br>
-                (ter)menjengkelkan seduniaa
-            </h1>
-
-            <div class="photo-text">HAHAHAHAHAHAH</div>
-
-            <div class="group-title">cfd date</div>
+        <div class="title">
+            judul (sapaan)
         </div>
 
-        <!-- FOTO 1–4 -->
+        <!-- HAHA ANIMASI -->
+        <div class="haha">
+            HAHAHAHAHAH
+        </div>
+
+        <div class="group-title">
+            cfd date
+        </div>
+
         <div class="photo-wrapper">
             <div class="photo-box"><img src="foto1.jpg"></div>
             <div class="photo-box"><img src="foto2.jpg"></div>
@@ -151,28 +161,12 @@
             <div class="photo-box"><img src="foto4.jpg"></div>
         </div>
 
-        <!-- YANG LAIN TETAP -->
-        <div class="group-title">jokul date (pas amu nggandeng aku)</div>
-        <div class="photo-wrapper">
-            <div class="photo-box"><img src="foto5.jpg"></div>
-            <div class="photo-box"><img src="foto6.jpg"></div>
-            <div class="photo-box"><img src="foto7.jpg"></div>
-        </div>
-
-        <div class="group-title">makasii syaa sumpahh 🥺🥺🥺🥺👊👊👊👊</div>
-        <div class="photo-wrapper">
-            <div class="photo-box"><img src="foto8.jpg"></div>
-            <div class="photo-box"><img src="foto9.jpg"></div>
-            <div class="photo-box"><img src="foto10.jpg"></div>
-        </div>
-
     </div>
 
     <script>
         window.addEventListener("scroll", () => {
-            const scrolled = window.scrollY;
             document.getElementById("hearts").style.transform =
-                `translateY(${scrolled * 0.3}px)`;
+                `translateY(${window.scrollY * 0.3}px)`;
         });
     </script>
 

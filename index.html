@@ -9,6 +9,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&family=Baloo+2:wght@500;600&display=swap" rel="stylesheet">
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(to bottom, #ff9a9e, #fecfef);
@@ -16,6 +20,40 @@
             text-align: center;
             padding: 40px 20px;
             margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* BACKGROUND LOVE */
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 200%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 22px;
+            opacity: 0.25;
+            animation: float 12s linear infinite;
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-200px);
+            }
+        }
+
+        /* KONTEN DI ATAS BACKGROUND */
+        .content {
+            position: relative;
+            z-index: 2;
         }
 
         h1 {
@@ -34,15 +72,13 @@
             letter-spacing: 1px;
         }
 
-        /* JUDUL KELOMPOK FOTO */
         .group-title {
             font-family: 'Baloo 2', cursive;
             font-size: 1.3em;
             color: #c2185b;
-            margin: 30px 0 15px;
+            margin: 35px 0 15px;
         }
 
-        /* GRID FOTO */
         .photo-wrapper {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
@@ -56,7 +92,7 @@
             aspect-ratio: 1 / 1;
             border-radius: 18px;
             border: 3px dashed #e91e63;
-            background-color: rgba(255,255,255,0.4);
+            background-color: rgba(255,255,255,0.5);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -72,7 +108,6 @@
             transition: transform 0.35s ease;
         }
 
-        /* HOVER EFFECT */
         .photo-box:hover {
             transform: translateY(-8px);
             box-shadow: 0 15px 30px rgba(233, 30, 99, 0.35);
@@ -83,12 +118,11 @@
             transform: scale(1.08);
         }
 
-        /* TEKS IMUT BAWAH */
         .cute-text {
             font-family: 'Baloo 2', cursive;
             font-size: 1.25em;
             color: #c2185b;
-            margin-top: 30px;
+            margin-top: 35px;
             line-height: 1.6;
         }
 
@@ -101,48 +135,72 @@
 </head>
 <body>
 
-    <h1>
-        hai manusia terimut, tercantik, terlucu,  
-        (ter)menjengkelkan seduniaa
-    </h1>
-
-    <div class="photo-text">HAHAHAHAHAHAH</div>
-
-    <!-- KELOMPOK 1 -->
-    <div class="group-title">cfd date</div>
-    <div class="photo-wrapper">
-        <div class="photo-box"><img src="foto1.jpg"></div>
-        <div class="photo-box"><img src="foto2.jpg"></div>
-        <div class="photo-box"><img src="foto3.jpg"></div>
-        <div class="photo-box"><img src="foto4.jpg"></div>
+    <!-- LOVE BACKGROUND -->
+    <div class="hearts" id="hearts">
+        <span class="heart" style="left:5%; top:10%">💗</span>
+        <span class="heart" style="left:15%; top:40%">💖</span>
+        <span class="heart" style="left:30%; top:70%">💕</span>
+        <span class="heart" style="left:50%; top:20%">💘</span>
+        <span class="heart" style="left:65%; top:60%">💞</span>
+        <span class="heart" style="left:80%; top:30%">💓</span>
+        <span class="heart" style="left:90%; top:75%">💗</span>
     </div>
 
-    <!-- KELOMPOK 2 -->
-    <div class="group-title">jokul date (pas amu nggandeng aku)</div>
-    <div class="photo-wrapper">
-        <div class="photo-box"><img src="foto5.jpg"></div>
-        <div class="photo-box"><img src="foto6.jpg"></div>
-        <div class="photo-box"><img src="foto7.jpg"></div>
+    <div class="content">
+
+        <h1>
+            hai manusia terimut, tercantik, terlucu,  
+            (ter)menjengkelkan seduniaa
+        </h1>
+
+        <div class="photo-text">HAHAHAHAHAHAH</div>
+
+        <!-- KELOMPOK 1 -->
+        <div class="group-title">cfd date</div>
+        <div class="photo-wrapper">
+            <div class="photo-box"><img src="foto1.jpg"></div>
+            <div class="photo-box"><img src="foto2.jpg"></div>
+            <div class="photo-box"><img src="foto3.jpg"></div>
+            <div class="photo-box"><img src="foto4.jpg"></div>
+        </div>
+
+        <!-- KELOMPOK 2 -->
+        <div class="group-title">jokul date (pas amu nggandeng aku)</div>
+        <div class="photo-wrapper">
+            <div class="photo-box"><img src="foto5.jpg"></div>
+            <div class="photo-box"><img src="foto6.jpg"></div>
+            <div class="photo-box"><img src="foto7.jpg"></div>
+        </div>
+
+        <!-- KELOMPOK 3 -->
+        <div class="group-title">makasii syaa sumpahh 🥺🥺🥺🥺👊👊👊👊</div>
+        <div class="photo-wrapper">
+            <div class="photo-box"><img src="foto8.jpg"></div>
+            <div class="photo-box"><img src="foto9.jpg"></div>
+            <div class="photo-box"><img src="foto10.jpg"></div>
+        </div>
+
+        <div class="cute-text">
+            syaaa maapin aku yaaa, im soo sorryy 🥺🥺🥺🥺🥺🥺  
+            🙏🏻🙏🏻🙏🏻🙏🏻🙏🏻
+        </div>
+
+        <div class="cute-text small">
+            sorryy ualayy hehee, kyo zidny lek jeremu
+        </div>
+
     </div>
 
-    <!-- KELOMPOK 3 -->
-    <div class="group-title">makasii syaa sumpahh 🥺🥺🥺🥺👊👊👊👊</div>
-    <div class="photo-wrapper">
-        <div class="photo-box"><img src="foto8.jpg"></div>
-        <div class="photo-box"><img src="foto9.jpg"></div>
-        <div class="photo-box"><img src="foto10.jpg"></div>
-    </div>
-
-    <!-- KATA-KATA IMUT -->
-    <div class="cute-text">
-        syaaa maapin aku yaaa, im soo sorryy 🥺🥺🥺🥺🥺🥺  
-        🙏🏻🙏🏻🙏🏻🙏🏻🙏🏻
-    </div>
-
-    <div class="cute-text small">
-        sorryy ualayy hehee, kyo zidny lek jeremu
-    </div>
+    <!-- SCROLL EFFECT LOVE -->
+    <script>
+        window.addEventListener("scroll", () => {
+            const scrolled = window.scrollY;
+            document.getElementById("hearts").style.transform =
+                `translateY(${scrolled * 0.3}px)`;
+        });
+    </script>
 
 </body>
 </html>
+
 

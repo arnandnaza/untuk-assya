@@ -9,21 +9,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&family=Baloo+2:wght@500;600&display=swap" rel="stylesheet">
 
     <style>
-        * {
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
 
         body {
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(to bottom, #ff9a9e, #fecfef);
-            color: #333;
             text-align: center;
             padding: 40px 20px;
             margin: 0;
             overflow-x: hidden;
         }
 
-        /* BACKGROUND LOVE */
+        /* LOVE BACKGROUND */
         .hearts {
             position: fixed;
             inset: 0;
@@ -43,53 +40,52 @@
             z-index: 2;
         }
 
-        /* JUDUL UTAMA */
+        /* ===== BAGIAN ATAS (STACK KE BAWAH) ===== */
+        .top-stack {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 35px;
+        }
+
         h1 {
             font-family: 'Pacifico', cursive;
             font-size: 2.3em;
             color: #b4004e;
             background: rgba(255,255,255,0.65);
-            display: inline-block;
             padding: 18px 26px;
             border-radius: 25px;
-            margin-bottom: 25px;
-            line-height: 1.4;
             box-shadow: 0 10px 20px rgba(233,30,99,0.25);
         }
 
-        /* TEKS ATAS FOTO */
         .photo-text {
             font-family: 'Baloo 2', cursive;
             background: #ffd6e8;
             color: #c2185b;
-            display: inline-block;
-            padding: 8px 18px;
+            padding: 8px 20px;
             border-radius: 20px;
             font-size: 1.1em;
-            margin-bottom: 30px;
             box-shadow: 0 6px 12px rgba(233,30,99,0.25);
         }
 
-        /* JUDUL KELOMPOK */
         .group-title {
             font-family: 'Baloo 2', cursive;
             background: linear-gradient(135deg, #ffb6d5, #ffd6e8);
             color: #b4004e;
-            display: inline-block;
-            padding: 10px 22px;
+            padding: 10px 24px;
             border-radius: 22px;
             font-size: 1.2em;
-            margin: 35px 0 15px;
             box-shadow: 0 8px 15px rgba(233,30,99,0.25);
         }
 
-        /* GRID FOTO */
+        /* FOTO (TIDAK DIUBAH) */
         .photo-wrapper {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
             gap: 18px;
             max-width: 700px;
-            margin: 0 auto;
+            margin: 0 auto 30px;
         }
 
         .photo-box {
@@ -122,7 +118,7 @@
 </head>
 <body>
 
-    <!-- LOVE BACKGROUND -->
+    <!-- LOVE -->
     <div class="hearts" id="hearts">
         <span class="heart" style="left:5%; top:10%">💗</span>
         <span class="heart" style="left:15%; top:40%">💖</span>
@@ -135,13 +131,19 @@
 
     <div class="content">
 
-        <h1>
-            hai manusia terimut, tercantik, terlucu,<br>
-            (ter)menjengkelkan seduniaa
-        </h1>
+        <!-- BAGIAN ATAS SESUAI CONTOH -->
+        <div class="top-stack">
+            <h1>
+                hai manusia terimut, tercantik, terlucu,<br>
+                (ter)menjengkelkan seduniaa
+            </h1>
 
-        <!-- KELOMPOK 1 -->
-        <div class="group-title">cfd date</div>
+            <div class="photo-text">HAHAHAHAHAHAH</div>
+
+            <div class="group-title">cfd date</div>
+        </div>
+
+        <!-- FOTO 1–4 -->
         <div class="photo-wrapper">
             <div class="photo-box"><img src="foto1.jpg"></div>
             <div class="photo-box"><img src="foto2.jpg"></div>
@@ -149,7 +151,7 @@
             <div class="photo-box"><img src="foto4.jpg"></div>
         </div>
 
-        <!-- KELOMPOK 2 -->
+        <!-- YANG LAIN TETAP -->
         <div class="group-title">jokul date (pas amu nggandeng aku)</div>
         <div class="photo-wrapper">
             <div class="photo-box"><img src="foto5.jpg"></div>
@@ -157,7 +159,6 @@
             <div class="photo-box"><img src="foto7.jpg"></div>
         </div>
 
-        <!-- KELOMPOK 3 -->
         <div class="group-title">makasii syaa sumpahh 🥺🥺🥺🥺👊👊👊👊</div>
         <div class="photo-wrapper">
             <div class="photo-box"><img src="foto8.jpg"></div>
@@ -167,7 +168,6 @@
 
     </div>
 
-    <!-- SCROLL EFFECT -->
     <script>
         window.addEventListener("scroll", () => {
             const scrolled = window.scrollY;
@@ -178,8 +178,3 @@
 
 </body>
 </html>
-
-
-
-
-

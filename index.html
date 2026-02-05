@@ -26,9 +26,7 @@
         /* BACKGROUND LOVE */
         .hearts {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
+            inset: 0;
             height: 200%;
             pointer-events: none;
             z-index: 0;
@@ -38,47 +36,54 @@
             position: absolute;
             font-size: 22px;
             opacity: 0.25;
-            animation: float 12s linear infinite;
         }
 
-        @keyframes float {
-            from {
-                transform: translateY(0);
-            }
-            to {
-                transform: translateY(-200px);
-            }
-        }
-
-        /* KONTEN DI ATAS BACKGROUND */
         .content {
             position: relative;
             z-index: 2;
         }
 
+        /* JUDUL UTAMA */
         h1 {
             font-family: 'Pacifico', cursive;
-            font-size: 2.4em;
-            color: #e91e63;
+            font-size: 2.3em;
+            color: #b4004e;
+            background: rgba(255,255,255,0.65);
+            display: inline-block;
+            padding: 18px 26px;
+            border-radius: 25px;
             margin-bottom: 25px;
             line-height: 1.4;
+            box-shadow: 0 10px 20px rgba(233,30,99,0.25);
         }
 
+        /* TEKS ATAS FOTO */
         .photo-text {
+            font-family: 'Baloo 2', cursive;
+            background: #ffd6e8;
+            color: #c2185b;
+            display: inline-block;
+            padding: 8px 18px;
+            border-radius: 20px;
             font-size: 1.1em;
-            font-weight: 600;
-            color: #d81b60;
-            margin-bottom: 25px;
-            letter-spacing: 1px;
+            margin-bottom: 30px;
+            box-shadow: 0 6px 12px rgba(233,30,99,0.25);
         }
 
+        /* JUDUL KELOMPOK */
         .group-title {
             font-family: 'Baloo 2', cursive;
-            font-size: 1.3em;
-            color: #c2185b;
+            background: linear-gradient(135deg, #ffb6d5, #ffd6e8);
+            color: #b4004e;
+            display: inline-block;
+            padding: 10px 22px;
+            border-radius: 22px;
+            font-size: 1.2em;
             margin: 35px 0 15px;
+            box-shadow: 0 8px 15px rgba(233,30,99,0.25);
         }
 
+        /* GRID FOTO */
         .photo-wrapper {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
@@ -88,14 +93,10 @@
         }
 
         .photo-box {
-            width: 100%;
             aspect-ratio: 1 / 1;
             border-radius: 18px;
             border: 3px dashed #e91e63;
-            background-color: rgba(255,255,255,0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background-color: rgba(255,255,255,0.55);
             overflow: hidden;
             transition: all 0.35s ease;
         }
@@ -110,26 +111,12 @@
 
         .photo-box:hover {
             transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(233, 30, 99, 0.35);
+            box-shadow: 0 15px 30px rgba(233,30,99,0.35);
             border-style: solid;
         }
 
         .photo-box:hover img {
             transform: scale(1.08);
-        }
-
-        .cute-text {
-            font-family: 'Baloo 2', cursive;
-            font-size: 1.25em;
-            color: #c2185b;
-            margin-top: 35px;
-            line-height: 1.6;
-        }
-
-        .cute-text.small {
-            font-size: 1.05em;
-            color: #ad1457;
-            margin-top: 10px;
         }
     </style>
 </head>
@@ -149,7 +136,7 @@
     <div class="content">
 
         <h1>
-            hai manusia terimut, tercantik, terlucu,  
+            hai manusia terimut, tercantik, terlucu,<br>
             (ter)menjengkelkan seduniaa
         </h1>
 
@@ -166,41 +153,5 @@
 
         <!-- KELOMPOK 2 -->
         <div class="group-title">jokul date (pas amu nggandeng aku)</div>
-        <div class="photo-wrapper">
-            <div class="photo-box"><img src="foto5.jpg"></div>
-            <div class="photo-box"><img src="foto6.jpg"></div>
-            <div class="photo-box"><img src="foto7.jpg"></div>
-        </div>
-
-        <!-- KELOMPOK 3 -->
-        <div class="group-title">makasii syaa sumpahh 🥺🥺🥺🥺👊👊👊👊</div>
-        <div class="photo-wrapper">
-            <div class="photo-box"><img src="foto8.jpg"></div>
-            <div class="photo-box"><img src="foto9.jpg"></div>
-            <div class="photo-box"><img src="foto10.jpg"></div>
-        </div>
-
-        <div class="cute-text">
-            syaaa maapin aku yaaa, im soo sorryy 🥺🥺🥺🥺🥺🥺  
-            🙏🏻🙏🏻🙏🏻🙏🏻🙏🏻
-        </div>
-
-        <div class="cute-text small">
-            sorryy ualayy hehee, kyo zidny lek jeremu
-        </div>
-
-    </div>
-
-    <!-- SCROLL EFFECT LOVE -->
-    <script>
-        window.addEventListener("scroll", () => {
-            const scrolled = window.scrollY;
-            document.getElementById("hearts").style.transform =
-                `translateY(${scrolled * 0.3}px)`;
-        });
-    </script>
-
-</body>
-</html>
-
+        <div class="
 

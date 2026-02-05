@@ -72,27 +72,27 @@ body{
     width:90%;
     max-width:900px;
     margin:auto;
-    padding:40px 0;
+    padding:40px 0 70px;
 }
 
-/* ===== TEXT BOX ===== */
-.text-box{
-    background:#ffd6e8;
-    padding:18px 22px;
-    border-radius:18px;
-    margin-bottom:20px;
+/* ===== MAIN TITLE ===== */
+.main-title{
+    background:#ff9fc9;
+    padding:28px 24px;
+    border-radius:26px;
+    margin-bottom:40px;
     text-align:center;
     font-family:'Comic Neue', cursive;
-    font-size:1.3rem;
-    color:#ff4d88;
-    box-shadow:0 6px 12px rgba(0,0,0,.12);
+    font-size:2.1rem;
+    color:#fff;
+    box-shadow:0 10px 20px rgba(0,0,0,.18);
 }
 
 /* ===== SECTION TITLE ===== */
 .section-title{
     background:#ff9fc9;
     display:inline-block;
-    padding:10px 20px;
+    padding:10px 22px;
     border-radius:16px;
     font-family:'Comic Neue', cursive;
     font-size:1.2rem;
@@ -120,8 +120,24 @@ body{
     transform:scale(1.08) rotate(1deg);
 }
 
+/* ===== CLOSING TEXT ===== */
+.closing{
+    background:#ffd6e8;
+    padding:22px;
+    border-radius:22px;
+    text-align:center;
+    font-family:'Comic Neue', cursive;
+    font-size:1.4rem;
+    color:#ff4d88;
+    box-shadow:0 8px 16px rgba(0,0,0,.15);
+}
+
 /* ===== RESPONSIVE ===== */
 @media(max-width:600px){
+    .main-title{
+        font-size:1.6rem;
+    }
+
     .photo-grid{
         grid-template-columns:repeat(2,1fr);
     }
@@ -136,9 +152,10 @@ body{
 
 <div class="container">
 
-    <!-- SAPAAN -->
-    <div class="text-box">
-        hai manusia terimut, tercantik, terlucu, (ter)menjengkelkan seduniaa
+    <!-- JUDUL -->
+    <div class="main-title">
+        hai manusia terimut, tercantik, terlucu,<br>
+        (ter)menjengkelkan seduniaa 💗
     </div>
 
     <!-- CFD DATE -->
@@ -166,6 +183,11 @@ body{
         <img src="foto10.jpg">
     </div>
 
+    <!-- PENUTUP -->
+    <div class="closing">
+        nextt hal seruu apa yaa seng bakal kita lakuin 🥺💗
+    </div>
+
 </div>
 
 <script>
@@ -190,5 +212,3 @@ window.addEventListener("scroll",()=>{
 
 </body>
 </html>
-
-

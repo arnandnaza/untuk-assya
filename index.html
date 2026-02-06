@@ -8,11 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Fredoka:wght@500&display=swap" rel="stylesheet">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
     font-family:'Fredoka', sans-serif;
@@ -38,8 +34,7 @@ body{
     animation: float 10s linear infinite;
 }
 
-.love::before,
-.love::after{
+.love::before,.love::after{
     content:"";
     position:absolute;
     width:20px;
@@ -47,20 +42,12 @@ body{
     background:#ff8fb1;
     border-radius:50%;
 }
-
-.love::before{
-    top:-10px;
-    left:0;
-}
-
-.love::after{
-    left:-10px;
-    top:0;
-}
+.love::before{top:-10px;left:0;}
+.love::after{left:-10px;top:0;}
 
 @keyframes float{
-    0%{ transform:translateY(0) rotate(45deg); }
-    100%{ transform:translateY(-120vh) rotate(45deg); }
+    from{transform:translateY(0) rotate(45deg);}
+    to{transform:translateY(-120vh) rotate(45deg);}
 }
 
 /* ===== CONTAINER ===== */
@@ -74,7 +61,7 @@ body{
 /* ===== MAIN TITLE ===== */
 .main-title{
     background:#ff9fc9;
-    padding:28px 24px;
+    padding:30px 26px;
     border-radius:26px;
     margin-bottom:40px;
     text-align:center;
@@ -82,26 +69,29 @@ body{
     font-size:2.1rem;
     color:#fff;
     box-shadow:0 10px 20px rgba(0,0,0,.18);
-
-    /* ANIMATION */
-    opacity:0;
-    transform:translateY(-20px) scale(0.95);
-    animation:titleIn 1.2s ease forwards;
 }
 
-@keyframes titleIn{
-    0%{
-        opacity:0;
-        transform:translateY(-25px) scale(0.9);
-    }
-    60%{
-        opacity:1;
-        transform:translateY(5px) scale(1.03);
-    }
-    100%{
-        opacity:1;
-        transform:translateY(0) scale(1);
-    }
+/* per kata */
+.main-title span{
+    display:inline-block;
+    opacity:0;
+    transform:translateY(-20px) scale(0.9);
+    animation: wordIn .6s ease forwards;
+}
+
+@keyframes wordIn{
+    60%{opacity:1;transform:translateY(5px) scale(1.05);}
+    100%{opacity:1;transform:translateY(0) scale(1);}
+}
+
+/* heartbeat */
+.heartbeat{
+    animation: beat 2s infinite ease-in-out;
+}
+
+@keyframes beat{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.04);}
 }
 
 /* ===== SECTION TITLE ===== */
@@ -131,12 +121,11 @@ body{
     transition:.4s;
     box-shadow:0 6px 15px rgba(0,0,0,.18);
 }
-
 .photo-grid img:hover{
     transform:scale(1.08) rotate(1deg);
 }
 
-/* ===== CLOSING TEXT ===== */
+/* ===== CLOSING ===== */
 .closing{
     background:#ffd6e8;
     padding:22px;
@@ -148,77 +137,85 @@ body{
     box-shadow:0 8px 16px rgba(0,0,0,.15);
 }
 
-/* ===== RESPONSIVE ===== */
 @media(max-width:600px){
-    .main-title{ font-size:1.6rem; }
-    .photo-grid{ grid-template-columns:repeat(2,1fr); }
+    .main-title{font-size:1.6rem;}
+    .photo-grid{grid-template-columns:repeat(2,1fr);}
 }
 </style>
 </head>
 
 <body>
 
-<!-- LOVE BACKGROUND -->
 <div class="love-bg" id="love-bg"></div>
 
 <div class="container">
 
-    <!-- JUDUL -->
-    <div class="main-title">
-        hai manusia terimut, tercantik, terlucu,<br>
-        (ter)menjengkelkan seduniaa 💗
-    </div>
+<!-- JUDUL -->
+<div class="main-title" id="title">
+    <span style="animation-delay:.1s">hai</span>
+    <span style="animation-delay:.2s">manusia</span>
+    <span style="animation-delay:.3s">terimut,</span>
+    <span style="animation-delay:.4s">tercantik,</span>
+    <span style="animation-delay:.5s">terlucu,</span><br>
+    <span style="animation-delay:.6s">(ter)menjengkelkan</span>
+    <span style="animation-delay:.7s">seduniaa</span>
+    <span style="animation-delay:.8s">💗</span>
+</div>
 
-    <!-- CFD DATE -->
-    <div class="section-title">cfd date</div>
-    <div class="photo-grid">
-        <img src="foto1.jpg">
-        <img src="foto2.jpg">
-        <img src="foto3.jpg">
-        <img src="foto4.jpg">
-    </div>
+<!-- CFD DATE -->
+<div class="section-title">cfd date</div>
+<div class="photo-grid">
+    <img src="foto1.jpg">
+    <img src="foto2.jpg">
+    <img src="foto3.jpg">
+    <img src="foto4.jpg">
+</div>
 
-    <!-- JOKUL DATE -->
-    <div class="section-title">jokul date (pas amu nggandeng aku)</div>
-    <div class="photo-grid">
-        <img src="foto5.jpg">
-        <img src="foto6.jpg">
-        <img src="foto7.jpg">
-    </div>
+<!-- JOKUL DATE -->
+<div class="section-title">jokul date (pas amu nggandeng aku)</div>
+<div class="photo-grid">
+    <img src="foto5.jpg">
+    <img src="foto6.jpg">
+    <img src="foto7.jpg">
+</div>
 
-    <!-- THANK YOU -->
-    <div class="section-title">makasii syaa sumpahh 🥺🥺🥺🥺👊👊👊👊</div>
-    <div class="photo-grid">
-        <img src="foto8.jpg">
-        <img src="foto9.jpg">
-        <img src="foto10.jpg">
-    </div>
+<!-- THANK YOU -->
+<div class="section-title">makasii syaa sumpahh 🥺🥺🥺🥺👊👊👊👊</div>
+<div class="photo-grid">
+    <img src="foto8.jpg">
+    <img src="foto9.jpg">
+    <img src="foto10.jpg">
+</div>
 
-    <!-- PENUTUP -->
-    <div class="closing">
-        nextt hal seruu apa yaa seng bakal kita lakuin 🥺💗
-    </div>
+<!-- PENUTUP -->
+<div class="closing">
+    nextt hal seruu apa yaa seng bakal kita lakuin 🥺💗
+</div>
 
 </div>
 
 <script>
-/* GENERATE LOVE */
-const bg = document.getElementById("love-bg");
-
+/* LOVE BACKGROUND */
+const bg=document.getElementById("love-bg");
 for(let i=0;i<40;i++){
-    const love = document.createElement("div");
-    love.className = "love";
-    love.style.left = Math.random()*100 + "%";
-    love.style.bottom = Math.random()*100 + "%";
-    love.style.animationDuration = (6 + Math.random()*6) + "s";
-    love.style.transform = `scale(${0.5 + Math.random()}) rotate(45deg)`;
-    bg.appendChild(love);
+    const l=document.createElement("div");
+    l.className="love";
+    l.style.left=Math.random()*100+"%";
+    l.style.bottom=Math.random()*100+"%";
+    l.style.animationDuration=(6+Math.random()*6)+"s";
+    l.style.transform=`scale(${0.5+Math.random()}) rotate(45deg)`;
+    bg.appendChild(l);
 }
 
-/* PARALLAX SCROLL */
+/* PARALLAX */
 window.addEventListener("scroll",()=>{
-    bg.style.transform = `translateY(${window.scrollY * 0.2}px)`;
+    bg.style.transform=`translateY(${scrollY*0.2}px)`;
 });
+
+/* HEARTBEAT AFTER LOAD */
+setTimeout(()=>{
+    document.getElementById("title").classList.add("heartbeat");
+},1600);
 </script>
 
 </body>

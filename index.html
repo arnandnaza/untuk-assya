@@ -212,17 +212,26 @@ body{
     transform:translateX(-50%);
 }
 
-/* LOVE POP ANIMATION */
+/* ===== LOVE BURST UPGRADE ===== */
 .floating-love{
     position:fixed;
-    font-size:22px;
-    animation: popLove 2s linear forwards;
+    font-size:40px; /* lebih besar */
     pointer-events:none;
+    animation: explodeLove 1.2s ease-out forwards;
 }
 
-@keyframes popLove{
-    0%{transform:translateY(0) scale(0.5); opacity:1;}
-    100%{transform:translateY(-150px) scale(1.4); opacity:0;}
+@keyframes explodeLove{
+    0%{
+        transform:translate(0,0) scale(0.3);
+        opacity:1;
+    }
+    70%{
+        opacity:1;
+    }
+    100%{
+        transform:translate(var(--x), var(--y)) scale(1.8);
+        opacity:0;
+    }
 }
 </style>
 </head>
@@ -344,6 +353,7 @@ function burstLove(){
 
 </body>
 </html>
+
 
 
 

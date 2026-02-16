@@ -212,24 +212,25 @@ body{
     transform:translateX(-50%);
 }
 
-/* ===== LOVE BURST UPGRADE ===== */
+/* ===== FLOATING LOVE (naik ke atas) ===== */
 .floating-love{
     position:fixed;
-    font-size:40px; /* lebih besar */
+    bottom:-20px; /* mulai dari bawah layar */
+    font-size:40px;
     pointer-events:none;
-    animation: explodeLove 1.2s ease-out forwards;
+    animation: floatUp 3s linear forwards;
 }
 
-@keyframes explodeLove{
+@keyframes floatUp{
     0%{
-        transform:translate(0,0) scale(0.3);
-        opacity:1;
+        transform: translateX(0) scale(0.5);
+        opacity:0;
     }
-    70%{
+    10%{
         opacity:1;
     }
     100%{
-        transform:translate(var(--x), var(--y)) scale(1.8);
+        transform: translateY(-110vh) translateX(var(--x)) scale(1.5);
         opacity:0;
     }
 }
@@ -319,40 +320,31 @@ setTimeout(()=>{
     document.getElementById("title").classList.add("heartbeat");
 },1600);
 
-function burstLove(){
-    const button = document.querySelector(".love-envelope");
-    const rect = button.getBoundingClientRect();
-    const centerX = rect.left + rect.width/2;
-    const centerY = rect.top + rect.height/2;
+function openEnvelope(){
+    for(let i = 0; i < 25; i++){
 
-    for(let i=0;i<40;i++){ // lebih banyak
-        const love=document.createElement("div");
-        love.className="floating-love";
-        love.innerHTML="💗";
+        let love = document.createElement("div");
+        love.className = "floating-love";
+        love.innerHTML = "💗";
 
-        love.style.left=centerX+"px";
-        love.style.top=centerY+"px";
+        // posisi horizontal random
+        love.style.left = Math.random() * 100 + "vw";
 
-        // arah random menyebar
-        const angle = Math.random()*2*Math.PI;
-        const distance = 150 + Math.random()*150;
-        const x = Math.cos(angle)*distance + "px";
-        const y = Math.sin(angle)*distance + "px";
-
-        love.style.setProperty("--x", x);
-        love.style.setProperty("--y", y);
+        // gerakan kiri kanan dikit
+        love.style.setProperty("--x", (Math.random()*100 - 50) + "px");
 
         document.body.appendChild(love);
 
-        setTimeout(()=>{
+        setTimeout(() => {
             love.remove();
-        },1200);
+        }, 3000);
     }
 }
 </script>
 
 </body>
 </html>
+
 
 
 

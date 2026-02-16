@@ -322,29 +322,45 @@ setTimeout(()=>{
 
 function burstLove(){
 
-    for(let i = 0; i < 30; i++){
+    const emojis = ["💗","💖","💕","💘","💝"];
+
+    for(let i = 0; i < 35; i++){
 
         const love = document.createElement("div");
         love.className = "floating-love";
-        love.innerHTML = "💗";
 
-        // posisi random horizontal
+        // emoji random
+        love.innerHTML = emojis[Math.floor(Math.random()*emojis.length)];
+
+        // posisi horizontal random
         love.style.left = Math.random() * 100 + "vw";
 
-        // gerakan kiri kanan dikit biar gak lurus banget
-        love.style.setProperty("--x", (Math.random()*100 - 50) + "px");
+        // ukuran random
+        const size = 25 + Math.random() * 40;
+        love.style.fontSize = size + "px";
+
+        // goyang kiri kanan random
+        love.style.setProperty("--x", (Math.random()*200 - 100) + "px");
+
+        // durasi random
+        const duration = 2 + Math.random() * 2;
+        love.style.animationDuration = duration + "s";
+
+        // delay random biar gak bareng
+        love.style.animationDelay = Math.random() * 0.5 + "s";
 
         document.body.appendChild(love);
 
         setTimeout(()=>{
             love.remove();
-        },3000);
+        }, duration * 1000);
     }
 }
 </script>
 
 </body>
 </html>
+
 
 
 

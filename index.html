@@ -321,60 +321,31 @@ setTimeout(()=>{
 },1600);
 
 function burstLove(){
-    const button = document.querySelector(".love-envelope");
-    const rect = button.getBoundingClientRect();
-    const centerX = rect.left + rect.width/2;
-    const centerY = rect.top + rect.height/2;
 
-    for(let i=0;i<40;i++){ // lebih banyak
-        const love=document.createElement("div");
-        love.className="floating-love";
-        love.innerHTML="💗";
+    for(let i = 0; i < 30; i++){
 
-        love.style.left=centerX+"px";
-        love.style.top=centerY+"px";
+        const love = document.createElement("div");
+        love.className = "floating-love";
+        love.innerHTML = "💗";
 
-        // arah random menyebar
-        const angle = Math.random()*2*Math.PI;
-        const distance = 150 + Math.random()*150;
-        const x = Math.cos(angle)*distance + "px";
-        const y = Math.sin(angle)*distance + "px";
+        // posisi random horizontal
+        love.style.left = Math.random() * 100 + "vw";
 
-        love.style.setProperty("--x", x);
-        love.style.setProperty("--y", y);
+        // gerakan kiri kanan dikit biar gak lurus banget
+        love.style.setProperty("--x", (Math.random()*100 - 50) + "px");
 
         document.body.appendChild(love);
 
         setTimeout(()=>{
             love.remove();
-        },1200);
-    }
-}
-    
-function openEnvelope(){
-    for(let i = 0; i < 25; i++){
-
-        let love = document.createElement("div");
-        love.className = "floating-love";
-        love.innerHTML = "💗";
-
-        // posisi horizontal random
-        love.style.left = Math.random() * 100 + "vw";
-
-        // gerakan kiri kanan dikit
-        love.style.setProperty("--x", (Math.random()*100 - 50) + "px");
-
-        document.body.appendChild(love);
-
-        setTimeout(() => {
-            love.remove();
-        }, 3000);
+        },3000);
     }
 }
 </script>
 
 </body>
 </html>
+
 
 
 

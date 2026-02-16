@@ -71,7 +71,6 @@ body{
     box-shadow:0 10px 20px rgba(0,0,0,.18);
 }
 
-/* per kata */
 .main-title span{
     display:inline-block;
     opacity:0;
@@ -84,7 +83,6 @@ body{
     100%{opacity:1;transform:translateY(0) scale(1);}
 }
 
-/* heartbeat */
 .heartbeat{
     animation: beat 2s infinite ease-in-out;
 }
@@ -107,7 +105,7 @@ body{
     box-shadow:0 5px 10px rgba(0,0,0,.15);
 }
 
-/* ===== PHOTO GRID ===== */
+/* ===== PHOTO GRID DEFAULT ===== */
 .photo-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
@@ -125,6 +123,32 @@ body{
     transform:scale(1.08) rotate(1deg);
 }
 
+/* ===== SPECIAL GROUP (KELOMPOK 5) ===== */
+.special-group{
+    background:#ffb3d9;
+    padding:25px;
+    border-radius:30px;
+    margin-bottom:60px;
+    box-shadow:0 12px 25px rgba(0,0,0,.15);
+}
+
+.special-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.special-grid img{
+    width:100%;
+    border-radius:20px;
+    transition:.3s;
+    box-shadow:0 6px 15px rgba(0,0,0,.2);
+}
+
+.special-grid img:hover{
+    transform:scale(1.05);
+}
+
 /* ===== CLOSING ===== */
 .closing{
     background:#ffd6e8;
@@ -137,9 +161,10 @@ body{
     box-shadow:0 8px 16px rgba(0,0,0,.15);
 }
 
-@media(max-width:600px){
-    .main-title{font-size:1.6rem;}
+@media(max-width:700px){
     .photo-grid{grid-template-columns:repeat(2,1fr);}
+    .special-grid{grid-template-columns:repeat(2,1fr);}
+    .main-title{font-size:1.6rem;}
 }
 </style>
 </head>
@@ -150,7 +175,6 @@ body{
 
 <div class="container">
 
-<!-- JUDUL -->
 <div class="main-title" id="title">
     <span style="animation-delay:.1s">hai</span>
     <span style="animation-delay:.2s">manusia</span>
@@ -162,39 +186,42 @@ body{
     <span style="animation-delay:.8s">💗</span>
 </div>
 
-<!-- CFD DATE -->
+<!-- GROUP 1-4 tetap sama -->
 <div class="section-title">cfd date</div>
 <div class="photo-grid">
-    <img src="foto1.jpg">
-    <img src="foto2.jpg">
-    <img src="foto3.jpg">
-    <img src="foto4.jpg">
+<img src="foto1.jpg"><img src="foto2.jpg"><img src="foto3.jpg"><img src="foto4.jpg">
 </div>
 
-<!-- JOKUL DATE -->
 <div class="section-title">jokul date (pas amu nggandeng aku)</div>
 <div class="photo-grid">
-    <img src="foto5.jpg">
-    <img src="foto6.jpg">
-    <img src="foto7.jpg">
+<img src="foto5.jpg"><img src="foto6.jpg"><img src="foto7.jpg">
 </div>
 
-<!-- THANK YOU -->
 <div class="section-title">makasii syaa sumpahh 🥺🥺🥺🥺👊👊👊👊</div>
 <div class="photo-grid">
-    <img src="foto8.jpg">
-    <img src="foto9.jpg">
-    <img src="foto10.jpg">
+<img src="foto8.jpg"><img src="foto9.jpg"><img src="foto10.jpg">
 </div>
 
-<!-- HEHEHEE -->
 <div class="section-title">ehehehee💗💗💗💗💗</div>
 <div class="photo-grid">
-    <img src="foto11.jpg">
-    <img src="foto12.jpg">
+<img src="foto11.jpg"><img src="foto12.jpg">
 </div>
 
-<!-- PENUTUP -->
+<!-- ===== KELOMPOK 5 BARU ===== -->
+<div class="section-title">yang paling gemes ini sih 😌💗</div>
+<div class="special-group">
+    <div class="special-grid">
+        <img src="foto13.jpg">
+        <img src="foto14.jpg">
+        <img src="foto15.jpg">
+        <img src="foto16.jpg">
+        <img src="foto17.jpg">
+        <img src="foto18.jpg">
+        <img src="foto19.jpg">
+        <img src="foto20.jpg">
+    </div>
+</div>
+
 <div class="closing">
     nextt hal seruu apa yaa seng bakal kita lakuin 🥺💗
 </div>
@@ -202,7 +229,6 @@ body{
 </div>
 
 <script>
-/* LOVE BACKGROUND */
 const bg=document.getElementById("love-bg");
 for(let i=0;i<40;i++){
     const l=document.createElement("div");
@@ -214,12 +240,10 @@ for(let i=0;i<40;i++){
     bg.appendChild(l);
 }
 
-/* PARALLAX */
 window.addEventListener("scroll",()=>{
     bg.style.transform=`translateY(${scrollY*0.2}px)`;
 });
 
-/* HEARTBEAT AFTER LOAD */
 setTimeout(()=>{
     document.getElementById("title").classList.add("heartbeat");
 },1600);
@@ -227,4 +251,3 @@ setTimeout(()=>{
 
 </body>
 </html>
-

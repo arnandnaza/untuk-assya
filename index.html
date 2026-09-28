@@ -7,11 +7,14 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Fredoka:wght@500&display=swap" rel="stylesheet">
 
+<style>
+
 /* ===== PORTAL PEMBUKA ===== */
+
 .portal {
     position: fixed;
     inset: 0;
-    z-index: 9999;
+    z-index: 99999;
     background: linear-gradient(135deg, #ff9fc9, #ffd6e8);
     display: flex;
     justify-content: center;
@@ -42,6 +45,7 @@
     0%,100% {
         transform: scale(1);
     }
+
     50% {
         transform: scale(1.15);
     }
@@ -81,7 +85,6 @@
     transform: scale(.95);
 }
     
-<style>
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
@@ -417,6 +420,17 @@ setTimeout(()=>{
     document.getElementById("title").classList.add("heartbeat");
 },1600);
 
+
+
+function openPortal() {
+    const portal = document.getElementById("portal");
+
+    portal.classList.add("hide");
+
+    window.scrollTo(0, 0);
+}
+
+    
 function burstLove(){
 
     const emojis = ["💗","💖","💕","💘","💝"];

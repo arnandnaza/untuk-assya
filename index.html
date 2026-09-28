@@ -186,15 +186,15 @@ body{
 
 /* ===== PHOTO GRID DEFAULT ===== */
 .photo-grid{
-    display:grid;
-    grid-template-columns:repeat(3, 250px);
+    display:flex;
+    flex-wrap:wrap;
     justify-content:center;
     gap:15px;
     margin-bottom:50px;
 }
 
 .photo-grid img{
-    width:100%;
+    width:250px;
     border-radius:18px;
     transition:.4s;
     box-shadow:0 6px 15px rgba(0,0,0,.18);

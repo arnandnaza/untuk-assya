@@ -185,7 +185,8 @@ body{
 /* ===== PHOTO GRID DEFAULT ===== */
 .photo-grid{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(3, 250px);
+    justify-content:center;
     gap:15px;
     margin-bottom:50px;
 }
@@ -239,9 +240,20 @@ body{
 }
 
 @media(max-width:700px){
-    .photo-grid{grid-template-columns:repeat(2,1fr);}
-    .special-grid{grid-template-columns:repeat(2,1fr);}
-    .main-title{font-size:1.6rem;}
+    .photo-grid{
+        grid-template-columns:repeat(2, 150px);
+        justify-content:center;
+    }
+
+    .special-grid{
+        grid-template-columns:repeat(2, 150px);
+        justify-content:center;
+    }
+
+    .main-title{
+        font-size:1.6rem;
+    }
+}
 }
 
 /* ===== LOVE ENVELOPE BUTTON ===== */
